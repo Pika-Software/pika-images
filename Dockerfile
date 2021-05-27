@@ -3,7 +3,11 @@ FROM openjdk:8-alpine
 LABEL author="Retro" maintainer="dankmolot@gmail.com"
 
 # setting up enviroment
-RUN useradd -d /home/container -m container
+RUN adduser \
+    --disabled-password \
+    --gecos "" \
+    --home "/home/container" \
+    "container"
 
 USER container
 ENV  USER=container HOME=/home/container
