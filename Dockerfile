@@ -6,7 +6,9 @@ LABEL author="Retro" maintainer="dankmolot@gmail.com"
 RUN dpkg --add-architecture i386 && \
     apt-get update  -y && \
     apt-get upgrade -y && \
-    apt-get install -y locales lib32gcc1 lib32stdc++6 libtinfo5:i386 curl ca-certificates openssl 
+    apt-get install -y --no-install-recommends locales lib32gcc1 lib32stdc++6 libtinfo5:i386 curl ca-certificates openssl && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* 
 
 # set locale to utf8
 RUN sed -i 's/^# *\(en_US.UTF-8\)/\1/' /etc/locale.gen && \
