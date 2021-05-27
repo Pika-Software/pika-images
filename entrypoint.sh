@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 cd /home/container
 echo "Docker image made by Retro#1593"
 
