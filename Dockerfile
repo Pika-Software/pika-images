@@ -6,7 +6,7 @@ LABEL author="Retro" maintainer="dankmolot@gmail.com"
 RUN dpkg --add-architecture i386 && \
     apt-get update  -y && \
     apt-get upgrade -y && \
-    apt-get install -y --no-install-recommends locales lib32gcc1 lib32stdc++6 libtinfo5:i386 curl ca-certificates openssl libmysqlclient:i386 && \
+    apt-get install -y --no-install-recommends locales lib32gcc1 lib32stdc++6 libtinfo5:i386 curl ca-certificates openssl default-libmysqlclient-dev:i386 && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* 
 
