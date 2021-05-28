@@ -2,20 +2,12 @@ FROM debian:buster-slim
 
 LABEL author="Retro" maintainer="dankmolot@gmail.com"
 
-# Installing core
+# Installing core and required libraries
 RUN dpkg --add-architecture i386 && \
     apt-get update  -y && \
     apt-get upgrade -y && \
     apt-get install -y --no-install-recommends locales curl ca-certificates openssl && \
-    
-# installing mysql lib
-    curl -o mysql-apt.deb https://dev.mysql.com/get/mysql-apt-config_0.8.17-1_all.deb && \
-    DEBIAN_FRONTEND=noninteractive dpkg -i mysql-apt.deb && \
-    rm mysql-apt.deb && \
-
-# installing other libraries
-    apt-get upgrade -y && \
-    apt-get install -y --no-install-recommends lib32gcc1 lib32stdc++6 libtinfo5:i386 libmysqlclient-dev:i386 && \
+    apt-get install -y --no-install-recommends lib32gcc1 lib32stdc++6 libtinfo5:i386 && \
 
 # Cleanup apt
     apt-get clean && \
