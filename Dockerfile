@@ -1,4 +1,4 @@
-FROM openjdk:17-alpine
+FROM openjdk:16-alpine
 
 LABEL author="Retro" maintainer="dankmolot@gmail.com"
 
