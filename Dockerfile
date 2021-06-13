@@ -14,8 +14,8 @@ RUN dpkg --add-architecture i386 && \
     rm -rf /var/lib/apt/lists/* 
 
 # set locale to utf8
-RUN sed -i 's/^# *\(en_US.UTF-8\)/\1/' /etc/locale.gen && \
-    locale-gen
+RUN localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
+ENV LANG en_US.utf8
 
 # setting up enviroment
 RUN useradd -d /home/container -m container
