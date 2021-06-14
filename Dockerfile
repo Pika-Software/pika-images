@@ -1,4 +1,4 @@
-FROM openjdk:8-alpine
+FROM openjdk:15-alpine
 
 LABEL author="Retro" maintainer="dankmolot@gmail.com"
 
