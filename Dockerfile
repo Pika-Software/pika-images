@@ -17,6 +17,9 @@ RUN dpkg --add-architecture i386 && \
 RUN localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 ENV LANG en_US.utf8
 
+# allow everyone to use /tmp folder
+RUN chmod 777 /tmp
+
 # setting up enviroment
 RUN useradd -d /home/container -m container
 
