@@ -2,6 +2,9 @@ FROM openjdk:12-alpine
 
 LABEL author="Retro" maintainer="dankmolot@gmail.com"
 
+# allow everyone to use /tmp folder
+RUN chmod 777 /tmp
+
 # setting up enviroment
 RUN adduser \
     --disabled-password \
