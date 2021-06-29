@@ -6,7 +6,7 @@ LABEL author="Retro" maintainer="dankmolot@gmail.com"
 RUN dpkg --add-architecture i386 && \
     apt-get update  -y && \
     apt-get upgrade -y && \
-    apt-get install -y --no-install-recommends locales curl ca-certificates openssl && \
+    apt-get install -y --no-install-recommends locales curl ca-certificates openssl gdb && \
     apt-get install -y --no-install-recommends lib32gcc1 lib32stdc++6 libtinfo5:i386 libsdl2-2.0-0:i386 libsdl2-2.0-0 libicu63 && \
 
 # Cleanup apt
