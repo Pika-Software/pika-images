@@ -3,7 +3,7 @@ cd /home/container
 echo "Docker image made by Retro#1593"
 
 # Add library paths
-export LD_LIBRARY_PATH=./garrysmod/lua/bin
+export LD_LIBRARY_PATH=./garrysmod/lua/bin:./bin:./bin/linux32:./bin/linux64
 
 # Set rights for files
 echo "Changing files rights..."
