@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM debian:buster
 
 LABEL author="Retro" maintainer="dankmolot@gmail.com"
 
