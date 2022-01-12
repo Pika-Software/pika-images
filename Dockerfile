@@ -1,25 +1,8 @@
-FROM debian:buster-slim
+FROM php:5.6-cli
 
 LABEL author="Retro" maintainer="dankmolot@gmail.com"
 
-# Installing depenches
-RUN apt-get update  -y && \
-    apt-get upgrade -y && \
-    apt-get install -y locales curl ca-certificates openssl && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/* 
+ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
-# set locale to utf8
-RUN sed -i 's/^# *\(en_US.UTF-8\)/\1/' /etc/locale.gen && \
-    locale-gen
-
-# setting up enviroment
-RUN useradd -d /home/container -m container
-
-USER container
-ENV  USER=container HOME=/home/container
-
-WORKDIR /home/container
-COPY ./entrypoint.sh /entrypoint.sh
-
-CMD ["/bin/sh", "/entrypoint.sh"]
+RUN chmod +x /usr/local/bin/install-php-extensions && \
+    install-php-extensions mysqli
