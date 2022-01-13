@@ -1,4 +1,4 @@
-FROM php:7.4-fpm
+FROM php:7.4-cli
 
 LABEL author="Retro" maintainer="dankmolot@gmail.com"
 
