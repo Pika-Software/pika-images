@@ -6,3 +6,5 @@ ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/do
 
 RUN chmod +x /usr/local/bin/install-php-extensions && \
     install-php-extensions mysqli pdo_mysql cli gd pdo mbstring tokenizer bcmath xml curl zip
+
+RUN sudo apt-get install -y php-cli
